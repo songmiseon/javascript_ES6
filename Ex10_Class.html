@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex10_Class</title>
+    <script>
+    class Person {
+        constructor(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        greet() {
+            return `Hello, my name is ${this.name}`;
+        }
+    }
+    const person = new Person("Diana", 40);
+    console.log("\n클래스 정의");
+    console.log(person.name); // Output: Diana
+    console.log(person.greet()); // Output: Hello, my name is Diana    
+
+    
+    class Animal {
+        constructor(name) {
+            this.name = name;
+        }
+        speak() {
+            return `${this.name} makes a noise.`;
+        }
+    }
+    class Dog extends Animal {
+        speak() {
+            return `${this.name} barks.`;
+        }
+    }
+    const dog = new Dog("Rex");
+    console.log("\n상속 (Inheritance)");
+    console.log(dog.speak()); // Output: Rex barks.
+
+
+    class MathUtility {
+        static add(a, b) {
+            return a + b;
+        }
+        multiply(a, b) {
+            return a * b;
+        }
+    }
+    console.log("\n클래스 메서드와 정적 메서드");
+    console.log(MathUtility.add(2, 3)); // Output: 5
+    const mathUtil = new MathUtility();
+    console.log(mathUtil.multiply(2, 3)); // Output: 6
+
+
+    function Human(name) {
+        this.name = name;
+    }
+    Human.prototype.greet = function() {
+        return `Hello, my name is ${this.name}`;
+    };
+    const human = new Human("Eve");
+    console.log("\n프로토타입 상속");
+    console.log(human.greet()); // Output: Hello, my name is Eve
+    </script>
+</head>
+<body>
+    <h2>Ex10_Class</h2>
+</body>
+</html>

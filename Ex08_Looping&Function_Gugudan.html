@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex08_Looping&Function_Gugudan</title>
+    <script>
+    // 구구단을 출력하는 함수
+    function printMultiplicationTable() {
+        const maxNumber = 9; // 출력할 최대 숫자 (구구단 9까지)
+
+        // 2부터 maxNumber까지 반복
+        for (let i = 2; i <= maxNumber; i++) {
+            let line = ''; // 한 줄을 저장할 변수
+            
+            // 각 숫자와 i를 곱한 결과를 저장
+            for (let j = 1; j <= maxNumber; j++) {
+                line += `${i}*${j}=${i*j} `;
+            }
+            // 줄 바꿈 후 출력
+            console.log(line);
+        }
+    }
+
+    // 함수 호출
+    printMultiplicationTable();
+    </script>
+</head>
+<body>
+    <h2>Ex08_Looping&Function_Gugudan</h2>
+</body>
+</html>

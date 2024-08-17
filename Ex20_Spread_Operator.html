@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex20_Spread_Operator</title>
+    <script>
+        /*
+            Spread Operator
+            >> 펼침 연산자
+            특정 객체 or 배열값을  다른 객체 or 배열로 복제 하거나 옮길때 ...
+
+            연산자 모양 : ... 
+        */
+
+        const obj = {
+            a:10,
+            b:20
+        };
+
+        //let newObj = {};
+        //let arr = [];   let obj = {}
+        //let arr = [10,20]      let obj = {a:10}
+        let newObj = {...obj};  
+        console.log(newObj);
+
+        const arr = [1,2,3];
+        // let newArr = [];  빈배열
+        let newArr = [...arr]; // [1,2,3]
+        console.log(newArr);
+
+        //일반적인 객체 복제 방식 
+        const obj2 = {
+            a:10,
+            b:20
+        };
+
+        const newObj2 = {
+            a:obj.a,
+            b:obj.b 
+        } 
+        console.log(newObj2);
+
+        //일반적인 배열 복제 방식
+        const arr2 = [1,2,3];
+        const newArr2 = [arr2[0] , arr2[1] , arr2[2]];
+        console.log(newArr2);
+
+        //spread 연산자 
+        //배열 , 객체 , 문자열   요소를 분해하거나 합치는 데 활용
+        
+        const arr3 = [1,2,3];
+        const arr4 = [4,5,6];
+
+        const combinedArray = [...arr3,...arr4];
+
+        console.log(combinedArray); // [1,2,3,4,5,6]
+
+        const arr5 = [1,2,3];
+        const newArray = [10,...arr5,40]
+        console.log(newArray); //[10,1,2,3,40]
+
+        //객체 
+
+        const obj3 = {name:"길동"};
+        const obj4 = {age:25};
+
+        const combinedObj = {...obj3 , ...obj4};
+        console.log(combinedObj); //{name:"길동",age:25}
+
+        //point insert ,update ... 처리 (vue , react)
+        const person = {name:'김유신', age:50 }
+        const updatedPerson = {...person , city:'seoul'}; //속성이 존재하지 않으면 추가
+        console.log(updatedPerson); // {name:'김유신', age:50 , city:'seoul'}
+
+        //Quiz
+        let user = {
+            name:"john",
+            age:21,
+            city:'busan'
+        };
+
+        //user 객체의 age 속성을 값을 20 변경한 객체를 하나 생성
+        //단 조건은 spread operator 연산자
+        let updateUser = {...user,age:20}; //같은 속성이 존재하면 변경
+        console.log(updateUser);
+
+
+        //난이도 중상
+        let user2 = {
+            name:'smith',
+            address: {
+                city:"seoul",
+                zip:"02"
+            }
+        }
+        //user2 객체의 address city 속성을 kangwon 으로 변경한 user3 객체를 생성
+        //단 조건은 spread operator 연산자
+
+        let updateUser2 = {
+            ...user2,
+            address:{...user2.address, city:'kangwon'}
+        };
+
+        console.log(updateUser2);
+        //{name:'smith', address:{city:'kangwon', zip:"02"}}
+    </script>
+</head>
+<body>
+    <h2>Ex20_Spread_Operator</h2>
+    <hr>
+</body>
+</html>

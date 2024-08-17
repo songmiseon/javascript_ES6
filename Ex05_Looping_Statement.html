@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex05_Looping_Statement</title>
+    <script>
+    console.log("\n for");
+    for (let i = 0; i < 5; i++) {
+        console.log(i);
+    }    
+
+    console.log("\n while");
+    let i = 0;
+    while (i < 5) {
+        console.log(i);
+        i++;
+    }
+
+    console.log("\n do~while~");
+    i = 0;
+    do {
+        console.log(i);
+        i++;
+    } while (i < 5);
+
+    console.log("\n for~of~");
+    let numbers = [1, 2, 3, 4, 5];
+    for (let number of numbers) {
+        console.log(number);
+    }
+
+    console.log("\n for~in~");
+    let person = {
+        name: "Alice",
+        age: 25,
+        city: "New York"
+    };
+    for (let key in person) {
+        console.log(key + ": " + person[key]);
+    }
+    </script>
+</head>
+<body>
+    <h2>Ex05_Looping_Statement</h2>
+</body>
+</html>

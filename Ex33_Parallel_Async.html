@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex33_Parallel_Async</title>
+    <script>
+    async function multiData(){
+        try{
+                const [post1 , post2] =await Promise.all(  //비동기 작업을 병렬로 처리 
+                    [
+                        fetch('https://jsonplaceholder.typicode.com/posts/1').then(res=> res.json()),
+                        fetch('https://jsonplaceholder.typicode.com/posts/2').then(res=> res.json())
+                    ]
+                );
+
+                console.log("post 1 : " , post1);
+                console.log("post 2 : " , post2);
+
+        }catch(error){
+                console.error("error data ", error); 
+        }
+    }
+
+    multiData();
+    </script>
+</head>
+<body>
+    <h2>Ex33_Parallel_Async</h2>
+    <hr>
+</body>
+</html>

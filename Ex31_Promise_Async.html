@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex31_Promise_Async</title>
+    <script>
+        //비동기 함수 처리
+        //결과 
+        function delayPromise(sec){
+            return new Promise((resolve,reject)=>{
+                //setTimeout 사용이유는 비동기 처럼 테스트 할려고 delay 가지게 할려고 ...
+                setTimeout(()=>{
+                    //성공
+                    //실패
+                    resolve(new Date()); //성공 시간전달 
+                } , sec*1000) 
+            });
+        }
+
+        //순차적인 실행 (GOOD)
+        delayPromise(1).then((result)=>{
+            console.log(1,result);
+            return delayPromise(1); //promise 객체 리턴
+        }).then((result)=>{
+            console.log(2,result);
+            return delayPromise(1); //promise를 구현한 함수 리턴
+        }).then((result)=>{
+            console.log(3,result);
+        });
+    </script>
+</head>
+<body>
+    <h2>Ex31_Promise_Async</h2>
+    <hr>
+</body>
+</html>

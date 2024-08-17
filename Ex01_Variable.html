@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex01_Variable</title>
+    <script>
+        function exampleVar() {
+            console.log(x); // undefined
+            var x = 5;
+            console.log(x); // 5
+        }
+        exampleVar();
+        
+        function exampleLet() {
+            if (true) {
+                let y = 10;
+                console.log(y); // 10
+            }
+            //console.log(y); // ReferenceError: y is not defined
+        }
+        exampleLet();
+        
+        function exampleConst() {
+            const z = 20;
+            console.log(z); // 20
+            
+            // 재할당 시도
+            //z = 30; // TypeError: Assignment to constant variable.
+            
+            // 객체의 경우
+            const obj = { a: 1 };
+            obj.a = 2; // 유효 (객체의 속성 변경)
+            console.log(obj.a); // 2
+            
+            // 배열의 경우
+            const arr = [1, 2, 3];
+            arr.push(4); // 유효 (배열에 요소 추가)
+            console.log(arr); // [1, 2, 3, 4]
+        }
+        exampleConst();    
+    </script>
+</head>
+<body>
+    <h2>Ex01_Variable</h2>
+</body>
+</html>

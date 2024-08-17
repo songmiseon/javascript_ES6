@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex34_Axios_Async</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h3>Axios Javascript</h3>
+    <button id="fetchdata">data  처리</button>
+    <div id="output"></div>
+    <script>
+    document.getElementById('fetchdata').addEventListener("click",()=>{
+        //비동기 요청
+        axios.get("https://jsonplaceholder.typicode.com/posts/1")
+        .then(response => {  //resolve
+            document.getElementById("output").innerText = JSON.stringify(response.data);
+        })
+        .catch(error=>{   //reject
+            console.log("Error data",error);
+        });
+    });
+    </script>
+</body>
+</html>

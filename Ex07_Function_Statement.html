@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex07_Function_Statement</title>
+    <script>
+    console.log("\n함수 선언문");
+    function greet(name) {
+        return `Hello, ${name}!`;
+    }
+    console.log(greet("Alice")); // Output: Hello, Alice!    
+
+    console.log("\n함수 표현식");
+    const greet2 = function(name) {
+        return `Hello, ${name}!`;
+    };
+    console.log(greet2("Bob")); // Output: Hello, Bob!
+
+    console.log("\n화살표 함수 (Arrow Function)");
+    const greet3 = (name) => `Hello, ${name}!`;
+    console.log(greet3("Charlie")); // Output: Hello, Charlie!
+    //파라미터가 하나인 경우 괄호를 생략할 수 있습니다.
+    const square = x => x * x;
+    console.log(square(4)); // Output: 16
+
+    console.log("\n기본 매개변수 (Default Parameters)");
+    function greet4(name = "Guest") {
+        return `Hello, ${name}!`;
+    }
+    console.log(greet4()); // Output: Hello, Guest!
+    console.log(greet4("Dave")); // Output: Hello, Dave!
+
+    console.log("\n나머지 매개변수 (Rest Parameters)");
+    function sum(...numbers) {
+        return numbers.reduce((acc, curr) => acc + curr, 0);
+    }
+    console.log(sum(1, 2, 3, 4)); // Output: 10
+    </script>
+</head>
+<body>
+    <h2>Ex07_Function_Statement</h2>
+</body>
+</html>

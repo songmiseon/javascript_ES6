@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex25_CallBack</title>
+    <script>
+        /*
+            콜백은 다른 함수에 인수로 전달되는 함수 입니다
+            이 기술을 사용하면 함수가 다른 함수를 인자로 받아서 호출할 수 있다
+
+            함수의 parameter 로 함수를 전달..^^
+
+            비동기 논리에서 사용
+             
+        */
+        function myDisplayer(some){
+            console.log("myDisplayer" + some);
+        }
+
+        function myCalculator(num1, num2 , fCallback){ //fCallback 함수의 주소
+            let sum = num1 + num2;
+            fCallback(sum); //호출
+        }
+
+        myCalculator(5,5,myDisplayer);
+
+        const myNumbers = [4,1,-20,-7,5,9,-6];
+
+        const posNumbers= removeNeg(myNumbers, (x)=> x >= 0); //function data(x) { return x>=0}
+        console.log(posNumbers);
+        function removeNeg(numbers , callback){ //callback 함수 전달
+            const myArray=[];
+            for(const x of numbers){
+                if(callback(x)){
+                    myArray.push(x);
+                }
+            }
+            return myArray;
+        }
+
+    </script>
+</head>
+<body>
+     <h2>Ex25_CallBack</h2>
+     <hr>
+</body>
+</html>

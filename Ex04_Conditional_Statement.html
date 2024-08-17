@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex04_Conditional_Statement</title>
+    <script>
+    let age = 18;
+
+    if (age >= 18) {
+        console.log("You are an adult.");
+    }
+
+    age = 16;
+    if (age >= 18) {
+        console.log("You are an adult.");
+    } else {
+        console.log("You are not an adult.");
+    }
+
+    let score = 85;
+    if (score >= 90) {
+        console.log("Grade: A");
+    } else if (score >= 80) {
+        console.log("Grade: B");
+    } else if (score >= 70) {
+        console.log("Grade: C");
+    } else {
+        console.log("Grade: D");
+    }
+
+    let day = 2;
+    let dayName;
+
+    switch (day) {
+        case 1:
+            dayName = "Monday";
+            break;
+        case 2:
+            dayName = "Tuesday";
+            break;
+        case 3:
+            dayName = "Wednesday";
+            break;
+        default:
+            dayName = "Unknown";
+    }
+
+    console.log(dayName); // Tuesday
+    </script>
+</head>
+<body>
+    <h2>Ex04_Conditional_Statement</h2>
+</body>
+</html>

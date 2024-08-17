@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex26_Sync_Async</title>
+    <script>
+    //동기 : 순서대로
+    console.log(1);
+    console.log(2);
+    console.log(3);
+    console.log(4);
+
+    //비동기 : 순서를 보장하지 않아요
+    console.log(1);
+    console.log(2);
+    setTimeout(()=>{
+    console.log(3);
+    },2000);
+    console.log(4);
+
+    //setTimeout(callback,시간)
+    /*
+    웹서버 request 요청 ->  response 응답
+    비동기 작업: 화면 깜밖임 없이 ... 부분적인 화면 업데이트 ... 쇼핑몰  상품 (대 , 중, 소) 상품리스트만 갱신
+    네이버 실시간 검색 
+    
+    기술
+    1. XMLHttpRequest 객체 활용 (웹 브라우져가 제공하는  javascript 객체 ) : 전통 ..
+    new XMLHttpRequest() ...
+
+    2. Fetch API (XMLHttpRequest 객체 없이도 비동기 처리)
+    https://velog.io/@dev-redo/REST-API%EC%99%80-Fetch-api
+
+    const promise = fetch(url [, options])
+
+    sp-boot 백엔트 개발 :  postman , Thunder Client (vs 플러그인 install)
+
+    front 개발(vue , react ) : fetch , axios  서버와 통신이 가능한지 데이터 TEST
+        1.  https://fakestoreapi.com/docs
+        2.  https://jsonplaceholder.typicode.com/
+
+    /posts	100 posts
+    /comments	500 comments
+    /albums	100 albums
+    /photos	5000 photos
+    /todos	200 todos
+    /users	10 users
+    
+    3. 내부적 helper
+    Promise , Async await
+
+    4. Lib : Jquery ajax  (  $.ajax() , $.getjson() , $.get() , $.post() )  
+    
+    $.getJSON( "ajax/test.json", function( data ) {
+            var items = [];
+            $.each( data, function( key, val ) {
+                items.push( "<li id='" + key + "'>" + val + "</li>" );
+            });
+            
+            $( "<ul/>", {
+                "class": "my-new-list",
+                html: items.join( "" )
+            }).appendTo( "body" );
+    });
+
+    5. Axios  
+    https://axios-http.com/kr/docs/intro
+    
+    */
+    //fetch("https://jsonplaceholder.typicode.com/posts")
+    //.then((response) => console.log(response))
+    </script>
+</head>
+<body>
+    <h2>Ex26_Sync_Async</h2>
+    <hr>
+</body>
+</html>

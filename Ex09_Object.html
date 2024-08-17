@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex09_Object</title>
+    <script>
+    const person = {
+        name: "Alice",
+        age: 30,
+        greet() {
+            return `Hello, my name is ${this.name}`;
+        }
+    };
+    console.log(person.name); // Output: Alice
+    console.log(person.greet()); // Output: Hello, my name is Alice  
+    
+    const name = "Bob";
+    const age = 25;
+    const student = {
+        name,
+        age
+    };
+    console.log(student); // Output: { name: 'Bob', age: 25 }
+
+    const member = {
+        name: "Charlie",
+        age: 35
+    };
+    const employee = {
+        ...member,
+        position: "Developer"
+    };
+    console.log(employee); // Output: { name: 'Charlie', age: 35, position: 'Developer' }
+    </script>
+</head>
+<body>
+    <h2>Ex09_Object</h2>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex24_Default_Parameter</title>
+    <script>
+    /*
+    Default parameter
+    기본값, 인수, 매개변수
+    function call(param, param1, param2) {
+        
+    }
+
+    function call2(param=1, param1={}, param2="korea") {
+
+    }
+    call()
+    call2(30, {name="홍길동"}, "america");
+    call2();
+    */    
+    
+    function printPerson(height, weight, age){
+        let h = height || 100;
+        let w = weight || 60;
+        let a = age || 50;
+        console.log(h,w,a);
+    }
+    printPerson(10,20,30);
+    printPerson();
+
+    function printPerson2(height=100, weight=60, age=50){
+        console.log(height,weight,age);
+    }
+    printPerson2(10,20,30);
+    printPerson2();
+    
+    </script>
+</head>
+<body>
+    <h2>Ex24_Default_Parameter</h2>
+    <hr>
+</body>
+</html>

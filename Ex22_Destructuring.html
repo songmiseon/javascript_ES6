@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex22_Destructuring - ES6 구조분해</title>
+    <script>
+    /*
+        Destructuring : ES6 구조분해 .. 
+        javascript 객체 배열 구조를 조작할 때 사용
+    */
+
+    const arr = [1,2,3,4];
+    const obj = {
+        a:10,
+        b:20,
+        c:30
+    }
+    //구조라는 단어가 객체 나 배열의 표현한 것을 구조화 되었다
+    const {a ,b ,c} = obj;
+
+    console.log(a);
+    console.log(b);
+    console.log(c);
+
+    const smith = {
+        lang:"javascript",
+        position:'front-end',
+        area:'kangnam',
+        hobby:"baseball",
+        age:90
+    };
+
+    //const lang = smith.lang;
+    //구조분해 할당
+    const {lang,position,area,hobby,age} = smith;
+    console.log(lang);
+    console.log(position);
+    console.log(area);
+    console.log(hobby);
+    console.log(age);        
+
+    //배열
+    const numbers = [11,22,33];
+    //let n = numbers[0];
+    const [first,second,third] = numbers;
+
+    const numbers2 = [1,2];
+    const [frist2,second2,third2=1000]= numbers2; //기본값...
+    console.log(frist2);
+
+    const numbers3 = [1,2,3,4,5];
+    const [,,third3,fourth3] =  numbers3;
+    console.log(third3);  // 3
+    console.log(fourth3); // 4
+    </script>
+</head>
+<body>
+    <h2>Ex22_Destructuring</h2>
+    <hr>
+</body>
+</html>

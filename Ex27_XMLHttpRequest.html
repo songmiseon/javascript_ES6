@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Ex27_XMLHttpRequest</title>
+	<script type="text/javascript">
+
+	  window.onload = function(){
+		  let xhr;
+		  if(window.XMLHttpRequest){
+			  xhr = new XMLHttpRequest;
+		  }else if(window.ActiveXObject){ //IE
+			  console.log("IE");
+		  }else{
+			  throw new Error("Ajax 비동기 지원하지 않아요");
+		  }
+		  
+		  //onreadystatechange 이벤트
+		  //readyState 속성이 바뀌었을 때 [실행]할 [이벤트 핸들러]를 지정한다.
+		  xhr.onreadystatechange = function(){
+			  console.log(xhr.readyState);
+			  if(xhr.readyState == 4){ //서버에서 응답이 왔다면
+				  if(xhr.status >= 200 && xhr.status < 300){ //응답이 성공적이라면
+					  //서버가 클라이언트에게 전달한 (응답한) 데이터 형식
+					  //1. Text(html,txt,css,json)  2. xml
+					  document.getElementById("container").innerHTML = xhr.responseText;
+				  }else{
+					  console.log("비정상 응답 : " + xhr.status);
+				  }
+			  }
+		  }
+		  
+		  //전송할 전부 (동기식  form action="Ex04_Server.html" , method="GET")
+		  xhr.open("GET","Ex03_Server.html");
+		  
+		  //전송 (form 안에서 input type=submit 동일)
+	  	  xhr.send(); //비동기식 전송 시작 
+	  }
+	</script>
+</head>
+<body>
+		<h2>Ex27_XMLHttpRequest</h2>
+		<hr>
+		<div id="container">
+		
+		</div>
+		<img src="./images/1.png" style="width:150px; height:150px">
+		<div>HELLO AJAX WORLD</div>
+</body>
+</html>

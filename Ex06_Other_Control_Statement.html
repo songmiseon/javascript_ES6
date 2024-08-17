@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex06_Other_Control_Statement</title>
+    <script>
+    console.log("\nbreak");
+    for (let i = 0; i < 10; i++) {
+        if (i === 5) {
+            break; // i가 5일 때 반복문 종료
+        }
+        console.log(i);
+    }
+
+    console.log("\ncontinue");
+    for (let i = 0; i < 10; i++) {
+        if (i % 2 === 0) {
+            continue; // 짝수는 건너뛰고 다음 반복으로 넘어감
+        }
+        console.log(i); // 홀수만 출력
+    }
+
+    console.log("\nreturn");
+    function add(a, b) {
+        return a + b;
+    }
+    let sum = add(5, 10);
+    console.log(sum); // 15
+
+    console.log("\nreturn");
+    function checkAge(age) {
+        if (age < 18) {
+            throw new Error("You must be at least 18 years old.");
+        }
+        return "Access granted.";
+    }
+    try {
+        console.log(checkAge(16));
+    } catch (e) {
+        console.error(e.message); // You must be at least 18 years old.
+    }
+    </script>
+</head>
+<body>
+    <h2>Ex06_Other_Control_Statement</h2>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex23_Nullish_Coalescing_Operator</title>
+    <script>
+        /*
+        Nullish coalescing operator(??)
+        널 병합 연산자 
+        연산자 ?? 의 왼쪽 피연산자 null 또는 undefined  오른쪽 피연산자 반환하고 그렇지 않으면 왼쪽 피연산자 반환
+        논리연산
+      const text;  
+      const data =  text ?? "hello world"
+      data 출력 >> "hello world"
+
+      const text="king";  
+      const data =  text ?? "hello world"
+      data 출력 >> "king"
+
+
+        etc)삼항연산자  조건 ?  true : false
+        */
+
+        /*
+        function printTitle(text){
+            let title = text;
+            if(text == null || text == undefined){ //유효성 검증 
+                title = "hello world";
+            }
+            console.log(title);
+        }
+        printTitle("greeting");
+        printTitle();
+        
+        위 코드를 좀 더 단순하게  null 병합 연산자  >>   A ?? B
+        */
+
+        function printTitle(text){
+            let title = text ?? "hello world";  //text 가 null or undefined 
+            console.log(title);
+        }
+        printTitle("greeting");
+        printTitle();
+
+        /*
+        널 병합 연산자 와 비슷한 논리   OR(||) 
+
+        ??  >> null or undefined
+        조금더 확장  ||  >>  ?? null or undefined + 0 , '' , NaN (Not a Number)
+
+        */
+       function getCount(count){
+        return count || 'There is no record';
+       }
+
+       //count > null ,  undefined , 0 , '' , NaN
+
+       console.log(getCount(0)); // 'There is no record'
+       console.log(getCount(1)); // 1
+
+    </script>
+</head>
+<body>
+    <h2>Ex23_Nullish_Coalescing_Operator</h2>
+    <hr>
+</body>
+</html>
